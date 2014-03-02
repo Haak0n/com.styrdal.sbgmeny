@@ -14,7 +14,6 @@ import android.widget.EditText;
 
 public class AddedDialog extends DialogFragment 
 {
-	
 	protected static final String TAG = "AddedDialog";
 	public final static String EXTRA_MESSAGE = "com.styrdal.SbgMeny.MESSAGE";
 	private SQLiteDatabase db;
