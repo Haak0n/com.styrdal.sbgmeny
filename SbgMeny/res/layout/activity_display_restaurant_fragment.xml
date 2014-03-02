@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayRestaurant" >
+    
+    <TextView android:id="@+id/display_restaurant_title"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_restaurant_open_icon"
+        android:layout_height="14sp"
+        android:layout_width="14sp"
+        android:layout_toLeftOf="@id/display_restaurant_title"
+		android:layout_marginTop="9sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center"
+        android:src="@drawable/ic_green" />
+    
+    <TextView android:id="@+id/display_restaurant_times"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="@dimen/subtitle"
+        android:layout_below="@id/display_restaurant_title"
+        android:paddingBottom="30sp" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_restaurant_divider1"
+        android:layout_below="@id/display_restaurant_times"/>
+    
+    <TextView android:id="@+id/display_restaurant_address1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_divider1"
+        android:paddingRight="2sp"
+        android:paddingLeft="2sp"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:gravity="left"
+        android:textSize="@dimen/text"
+		android:text="@string/address" />
+    
+    <TextView android:id="@+id/display_restaurant_address2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/display_restaurant_address1"
+        android:layout_below="@id/display_restaurant_divider1"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:textSize="@dimen/text" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_restaurant_divider2"
+        android:layout_below="@id/display_restaurant_address2" />
+    
+    <TextView android:id="@+id/display_restaurant_number1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_divider2"
+        android:gravity="left"
+        android:paddingRight="2sp"
+        android:paddingLeft="2sp"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:textSize="@dimen/text"
+        android:text="@string/number" />
+    
+    <TextView android:id="@+id/display_restaurant_number2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_divider2"
+        android:layout_toRightOf="@id/display_restaurant_number1"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="@dimen/text" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_restaurant_divider3"
+        android:layout_below="@id/display_restaurant_number2" />
+    
+    <TextView android:id="@+id/display_restaurant_url1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_number2"
+        android:gravity="left"
+        android:paddingRight="2sp"
+        android:paddingLeft="2sp"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:textSize="@dimen/text"
+        android:text="@string/url" />
+        
+    <TextView android:id="@+id/display_restaurant_url2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_number2"
+        android:layout_toRightOf="@id/display_restaurant_url1"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:textSize="@dimen/text"/>
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_restaurant_divider4"
+        android:layout_below="@id/display_restaurant_url2" />
+    
+    <TextView android:id="@+id/display_restaurant_extra"
+		android:layout_height="wrap_content"
+		android:layout_width="300sp"
+		android:layout_below="@id/display_restaurant_divider4"
+		android:gravity="left"
+		android:paddingLeft="2sp"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+		android:textSize="@dimen/text" />
+    
+    <Button android:id="@+id/display_restaurant_menu_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_extra"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="@dimen/text"
+        android:text="@string/menu_button"
+        android:onClick="showMenu" />
+	
+</RelativeLayout>

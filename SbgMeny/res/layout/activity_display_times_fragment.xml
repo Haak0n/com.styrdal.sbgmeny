@@ -1,0 +1,252 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayTimes" >
+
+    <TextView android:id="@+id/display_times_monday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/monday" />
+    
+    <TextView android:id="@+id/display_times_monday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_monday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_monday_time"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_times_divider1"
+        android:layout_below="@id/display_times_monday"/>
+    
+    <TextView android:id="@+id/display_times_tuesday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_times_divider1"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/tuesday" />
+    
+    <TextView android:id="@+id/display_times_tuesday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/display_times_divider1"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_tuesday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_tuesday_time"
+        android:layout_below="@id/display_times_divider1"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_times_divider2"
+        android:layout_below="@id/display_times_tuesday"/>
+    
+    <TextView android:id="@+id/display_times_wednesday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_times_divider2"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/wednesday" />
+    
+    <TextView android:id="@+id/display_times_wednesday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/display_times_divider2"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_wednesday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_wednesday_time"
+        android:layout_below="@id/display_times_divider2"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_times_divider3"
+        android:layout_below="@id/display_times_wednesday"/>
+    
+    <TextView android:id="@+id/display_times_thursday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_times_divider3"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/thursday" />
+    
+    <TextView android:id="@+id/display_times_thursday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/display_times_divider3"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_thursday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_thursday_time"
+        android:layout_below="@id/display_times_divider3"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_times_divider4"
+        android:layout_below="@id/display_times_thursday"/>
+    
+    <TextView android:id="@+id/display_times_friday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_times_divider4"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/friday" />
+    
+    <TextView android:id="@+id/display_times_friday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/display_times_divider4"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_friday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_friday_time"
+        android:layout_below="@id/display_times_divider4"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_times_divider5"
+        android:layout_below="@id/display_times_friday"/>
+    
+    <TextView android:id="@+id/display_times_saturday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_times_divider5"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/saturday" />
+    
+    <TextView android:id="@+id/display_times_saturday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/display_times_divider5"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_saturday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_saturday_time"
+        android:layout_below="@id/display_times_divider5"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_times_divider6"
+        android:layout_below="@id/display_times_saturday"/>
+    
+    <TextView android:id="@+id/display_times_sunday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_times_divider6"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/sunday" />
+    
+    <TextView android:id="@+id/display_times_sunday_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/display_times_divider6"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title" />
+    
+    <ImageView android:id="@+id/display_times_sunday_icon"
+        android:layout_height="16sp"
+        android:layout_width="16sp"
+        android:layout_toLeftOf="@id/display_times_sunday_time"
+        android:layout_below="@id/display_times_divider6"
+		android:layout_marginTop="13sp"
+		android:layout_marginLeft="2sp"
+        android:scaleType="fitXY"
+        android:gravity="center" />
+
+</RelativeLayout>

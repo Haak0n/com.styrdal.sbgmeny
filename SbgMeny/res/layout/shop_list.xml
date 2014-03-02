@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <TextView android:id="@+id/shop_list_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text" />
+    
+    <TextView android:id="@+id/shop_list_numberspace"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/shop_list_number"
+		android:textSize="@dimen/text"
+		android:text="@string/numberspace" />
+    
+	<TextView android:id="@+id/shop_list_name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/shop_list_numberspace"
+		android:textSize="@dimen/text" />
+	
+	<TextView android:id="@+id/shop_list_extra"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@id/shop_list_name"
+	    android:paddingLeft="2sp"
+	    android:gravity="bottom"
+	    android:textSize="@dimen/subtitle" />
+
+	<TextView android:id="@+id/shop_list_toppings"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/shop_list_name"
+		android:textSize="@dimen/subtext" />
+	
+	<TextView android:id="@+id/shop_list_pricetag"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:textSize="@dimen/text"
+		android:text="@string/pricetag" />
+	
+	<TextView android:id="@+id/shop_list_price"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:layout_toLeftOf="@id/shop_list_pricetag"
+		android:textSize="@dimen/text" />
+	
+	<TextView android:id="@+id/shop_list_added1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/shop_list_toppings"
+		android:textSize="@dimen/subtext"
+		android:text="@string/shop_list_added" />
+	
+	<TextView android:id="@+id/shop_list_added2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/shop_list_toppings"
+		android:layout_toRightOf="@id/shop_list_added1"
+		android:textSize="@dimen/subtext" />
+	
+	<TextView android:id="@+id/shop_list_removed1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/shop_list_added1"
+		android:textSize="@dimen/subtext"
+		android:text="@string/shop_list_removed" />
+	
+	<TextView android:id="@+id/shop_list_removed2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/shop_list_added1"
+		android:layout_toRightOf="@id/shop_list_removed1"
+		android:textSize="@dimen/subtext" />
+
+</RelativeLayout>

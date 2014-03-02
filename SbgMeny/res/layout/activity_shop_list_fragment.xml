@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopList" >
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <TextView 
+        android:id="@+id/shop_list_totalprice1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@android:id/list"
+        android:layout_marginTop="5sp"
+        android:textSize="@dimen/text"
+        android:visibility="invisible"
+        android:text="@string/total_price" />
+    
+    <TextView 
+        android:id="@+id/shop_list_totalprice2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@android:id/list"
+        android:layout_toRightOf="@id/shop_list_totalprice1"
+        android:layout_marginTop="5sp"
+        android:textSize="@dimen/text" />
+    
+    <Button android:id="@+id/shop_list_clear_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/shop_list_totalprice1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/text"
+        android:visibility="invisible"
+        android:text="@string/clear_button" />
+
+</RelativeLayout>

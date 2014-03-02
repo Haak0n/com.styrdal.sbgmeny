@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <TextView android:id="@+id/menu_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text" />
+    
+    <TextView android:id="@+id/menu_numberspace"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/menu_number"
+		android:textSize="@dimen/text"
+		android:text="@string/numberspace" />
+    
+	<TextView android:id="@+id/menu_name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/menu_numberspace"
+		android:textSize="@dimen/text" />
+	
+	<TextView android:id="@+id/menu_extra"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_toRightOf="@id/menu_name"
+	    android:paddingLeft="2sp"
+	    android:gravity="bottom"
+	    android:textSize="@dimen/subtitle" />
+
+	<TextView android:id="@+id/menu_toppings"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/menu_name"
+		android:textSize="@dimen/subtext" />
+	
+	<TextView android:id="@+id/menu_pricetag"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:textSize="@dimen/text"
+		android:text="@string/pricetag" />
+	
+	<TextView android:id="@+id/menu_price"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:layout_toLeftOf="@id/menu_pricetag"
+		android:textSize="@dimen/text" />
+
+</RelativeLayout>

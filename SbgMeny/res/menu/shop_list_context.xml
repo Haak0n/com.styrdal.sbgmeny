@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+     <item android:id="@+id/context_remove"
+          android:title="@string/menu_remove_string" />
+     
+     <item android:id="@+id/context_edit_added"
+          android:title="@string/menu_added_string" />
+     
+     <item android:id="@+id/context_edit_removed"
+          android:title="@string/menu_removed_string" />
+</menu>
