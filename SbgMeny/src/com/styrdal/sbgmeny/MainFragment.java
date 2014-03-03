@@ -41,13 +41,13 @@ public class MainFragment extends ListFragment
 			mDbHelper = new RestaurantsDBHelper(context, dbName, dbName);
 			SQLiteDatabase db = mDbHelper.getWritableDatabase();
 			
-			String[] cursorProjection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, timesToday()};
+			String[] cursorProjection = cursorProjection();
 			String sortOrder = RestaurantsEntry.COLUMN_NAME_NAME + " ASC";
 			
 			Cursor c = db.query(RestaurantsEntry.TABLE_NAME, cursorProjection, null, null, null, null, sortOrder);
 			
-			String[] selection =  {RestaurantsEntry.COLUMN_NAME_NAME, timesToday()};
-			int[] displays =  {R.id.main_name, R.id.main_open};
+			String[] selection =  {RestaurantsEntry.COLUMN_NAME_NAME, cursorProjection[4], cursorProjection[5]};
+			int[] displays =  {R.id.main_name, R.id.main_open, R.id.main_close};
 			
 			SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.main_list, c, selection, displays, 0);
 			
@@ -79,7 +79,7 @@ public class MainFragment extends ListFragment
 	    
 	}
 	//Getting the correct day column for today
-	private String timesToday()
+	private String[] cursorProjection()
 	{
 		Time today = new Time(Time.getCurrentTimezone());
 		today.setToNow();
@@ -87,31 +87,38 @@ public class MainFragment extends ListFragment
 		
 		if (day == today.MONDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_MONDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_MONDAY_OPEN, RestaurantsEntry.COLUMN_NAME_MONDAY_CLOSE};
+			return projection;
 		}
 		else if (day == today.TUESDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_TUESDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_TUESDAY_OPEN, RestaurantsEntry.COLUMN_NAME_TUESDAY_CLOSE};
+			return projection;
 		}
 		else if (day == today.WEDNESDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_WEDNESDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_WEDNESDAY_OPEN, RestaurantsEntry.COLUMN_NAME_WEDNESDAY_CLOSE};
+			return projection;
 		}
 		else if (day == today.THURSDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_THURSDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_THURSDAY_OPEN, RestaurantsEntry.COLUMN_NAME_THURSDAY_CLOSE};
+			return projection;
 		}
 		else if (day == today.FRIDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_FRIDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_FRIDAY_OPEN, RestaurantsEntry.COLUMN_NAME_FRIDAY_CLOSE};
+			return projection;
 		}
 		else if (day == today.SATURDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_SATURDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_SATURDAY_OPEN, RestaurantsEntry.COLUMN_NAME_SATURDAY_CLOSE};
+			return projection;
 		}
 		else if (day == today.SUNDAY)
 		{
-			return RestaurantsEntry.COLUMN_NAME_SUNDAY;
+			String[] projection = {RestaurantsEntry.COLUMN_NAME_NAME, RestaurantsEntry._ID, RestaurantsEntry.COLUMN_NAME_IDNAME, RestaurantsEntry.COLUMN_NAME_SUNDAY_OPEN, RestaurantsEntry.COLUMN_NAME_SUNDAY_CLOSE};
+			return projection;
 		}
 		else
 		{
