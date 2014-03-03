@@ -319,11 +319,11 @@ int id ifRoom 0x7f06000a
 int id image 0x7f060027
 int id listMode 0x7f060001
 int id list_item 0x7f060029
-int id main_close 0x7f060072
 int id main_fragment 0x7f060069
+int id main_list_close 0x7f060070
+int id main_list_separator 0x7f060071
 int id main_name 0x7f06006f
-int id main_open 0x7f060070
-int id main_separator 0x7f060071
+int id main_open 0x7f060072
 int id menu_extra 0x7f060076
 int id menu_name 0x7f060075
 int id menu_number 0x7f060073

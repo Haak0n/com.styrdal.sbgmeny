@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class MainFragment extends ListFragment 
@@ -31,7 +32,7 @@ public class MainFragment extends ListFragment
 
 		try
 		{
-			inflater.inflate(R.layout.activity_main_fragment, container, false);
+			View fragmentView = inflater.inflate(R.layout.activity_main_fragment, container, false);
 			
 			RestaurantsDBHelper mDbHelper;
 			
@@ -46,12 +47,16 @@ public class MainFragment extends ListFragment
 			
 			Cursor c = db.query(RestaurantsEntry.TABLE_NAME, cursorProjection, null, null, null, null, sortOrder);
 			
-			String[] selection =  {RestaurantsEntry.COLUMN_NAME_NAME, cursorProjection[4], cursorProjection[5]};
-			int[] displays =  {R.id.main_name, R.id.main_open, R.id.main_close};
 			
-			SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.main_list, c, selection, displays, 0);
 			
-			setListAdapter(adapter);	
+			String[] selection =  {RestaurantsEntry.COLUMN_NAME_NAME, cursorProjection[3], cursorProjection[4]};
+			int[] displays =  {R.id.main_name, R.id.main_open, R.id.main_list_close};
+			
+			MainListAdapter adapter = new MainListAdapter(context, c, cursorProjection[3], cursorProjection[4]);
+			
+			TextView separator = (TextView) fragmentView.findViewById(R.id.main_list_separator);
+			
+			setListAdapter(adapter);
 		}
 		catch (IOException e)
 		{
