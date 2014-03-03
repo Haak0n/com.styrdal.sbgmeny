@@ -12,22 +12,22 @@
         android:gravity="center"
         android:textSize="@dimen/head_title" />
     
-    <TextView android:id="@+id/main_open"
+    <TextView android:id="@+id/main_list_open"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_toLeftOf="@id/main_separator"
+        android:layout_toLeftOf="@id/main_list_separator"
         android:paddingTop="5sp"
         android:paddingBottom="5sp"
         android:paddingRight="5sp"
         android:gravity="center"
         android:textSize="@dimen/title" />
     
-    <TextView android:id="@+id/main_separator"
+    <TextView android:id="@+id/main_list_separator"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_toLeftOf="@id/main_close"
+        android:layout_toLeftOf="@id/main_list_close"
         android:paddingTop="5sp"
         android:paddingBottom="5sp"
         android:paddingRight="5sp"
@@ -35,7 +35,7 @@
         android:textSize="@dimen/title"
         android:text=" - " />
     
-    <TextView android:id="@+id/main_close"
+    <TextView android:id="@+id/main_list_close"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_alignParentRight="true"
