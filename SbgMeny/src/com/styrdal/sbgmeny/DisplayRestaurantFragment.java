@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -93,6 +94,18 @@ public class DisplayRestaurantFragment extends Fragment {
 			url2.setOnClickListener(showUrl);
 		}
 		
+		if(restaurant.getDaily())
+		{
+			Button dailyButton = (Button) fragmentView.findViewById(R.id.display_restaurant_daily_button);
+			dailyButton.setVisibility(Button.VISIBLE);
+		}
+		
+		if(restaurant.getStandard())
+		{
+			Button standardButton = (Button) fragmentView.findViewById(R.id.display_restaurant_menu_button);
+			standardButton.setVisibility(Button.VISIBLE);
+		}
+		
 		TextView extra2 = (TextView) fragmentView.findViewById(R.id.display_restaurant_extra);
 		extra2.setText(restaurant.getExtra());
 		
@@ -101,8 +114,16 @@ public class DisplayRestaurantFragment extends Fragment {
 	}
 	
 	//Menu button listener
-	public void showMenu(View view) {
+	public void showMenu(View view)
+	{
 		Intent intent = new Intent(getActivity(), DisplayMenu.class);
+		startActivity(intent);
+	}
+	
+	//Daily button listener
+	public void showDaily(View view)
+	{
+		Intent intent = new Intent(getActivity(), DisplayDaily.class);
 		startActivity(intent);
 	}
 	

@@ -9,6 +9,7 @@
     <string name="number">Telefon:</string>
     <string name="url">Hemsida:</string>
     <string name="menu_button">Meny</string>
+    <string name="daily_button">Dagens</string>
     <string name="title_activity_display_menu">Meny</string>
     <string name="pricetag">:-</string>
     <string name="numberspace">. </string>
@@ -35,5 +36,6 @@
     <string name="edit">Ändra</string>
     <string name="cancel">Avbryt</string>
     <string name="total_price">Uppskattat totalt pris: </string>
+    <string name="title_activity_display_daily">DisplayDaily</string>
 
 </resources>

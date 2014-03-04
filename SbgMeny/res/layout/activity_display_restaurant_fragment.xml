@@ -127,6 +127,19 @@
         android:gravity="center"
         android:textSize="@dimen/text"
         android:text="@string/menu_button"
+        android:visibility="invisible"
         android:onClick="showMenu" />
+    
+    <Button android:id="@+id/display_restaurant_daily_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_extra"
+        android:layout_toLeftOf="@id/display_restaurant_menu_button"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="@dimen/text"
+        android:text="@string/daily_button"
+        android:visibility="invisible"
+        android:onClick="showDaily" />
 	
 </RelativeLayout>

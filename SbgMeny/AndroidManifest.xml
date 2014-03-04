@@ -61,6 +61,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.styrdal.sbgmeny.DisplayMenu" />
         </activity>
+        <activity
+            android:name="com.styrdal.sbgmeny.DisplayDaily"
+            android:label="@string/title_activity_display_daily"
+            android:parentActivityName="DisplayRestaurant" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="DisplayRestaurant" />
+        </activity>
     </application>
 
 </manifest>

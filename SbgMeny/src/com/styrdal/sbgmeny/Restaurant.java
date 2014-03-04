@@ -25,6 +25,8 @@ public class Restaurant {
 	private String saturday;
 	private String sunday;
 	private String idname;
+	private boolean daily;
+	private boolean standard;
 	private String today;
 	
 	public Restaurant()	{}
@@ -50,7 +52,9 @@ public class Restaurant {
 				RestaurantsEntry.COLUMN_NAME_THURSDAY_CLOSE,
 				RestaurantsEntry.COLUMN_NAME_FRIDAY_CLOSE,
 				RestaurantsEntry.COLUMN_NAME_SATURDAY_CLOSE,
-				RestaurantsEntry.COLUMN_NAME_SUNDAY_CLOSE
+				RestaurantsEntry.COLUMN_NAME_SUNDAY_CLOSE,
+				RestaurantsEntry.COLUMN_NAME_DAILY,
+				RestaurantsEntry.COLUMN_NAME_STANDARD
 				};
 		
 		String sortOrder = RestaurantsEntry._ID + " ASC";
@@ -117,6 +121,9 @@ public class Restaurant {
 			this.sunday = "Stängt";
 		}
 		
+		this.daily = Boolean.parseBoolean(c.getString(c.getColumnIndex(RestaurantsEntry.COLUMN_NAME_DAILY)));
+		this.standard = Boolean.parseBoolean(c.getString(c.getColumnIndex(RestaurantsEntry.COLUMN_NAME_STANDARD)));
+		
 		//Check todays open times
 		this.today = timesToday();
 	}
@@ -148,7 +155,6 @@ public class Restaurant {
 		Time today = new Time(Time.getCurrentTimezone());
 		today.setToNow();
 		int day = today.weekDay;
-		
 		if (day == today.MONDAY)
 		{
 			return monday;
@@ -265,6 +271,16 @@ public class Restaurant {
 		return idname;
 	}
 	
+	public boolean getDaily()
+	{
+		return daily;
+	}
+	
+	public boolean getStandard()
+	{
+		return standard;
+	}
+	
 	//Setters
 	
 	public void setName(String name)
@@ -325,6 +341,16 @@ public class Restaurant {
 	public void setSunday(String sunday)
 	{
 		this.sunday = sunday;
+	}
+	
+	public void setDaily(boolean daily)
+	{
+		this.daily = daily;
+	}
+	
+	public void setStandard(boolean standard)
+	{
+		this.standard = standard;
 	}
 	
 	
