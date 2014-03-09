@@ -8,6 +8,7 @@
     <string name="address">Adress:</string>
     <string name="number">Telefon:</string>
     <string name="url">Hemsida:</string>
+    <string name="daily_text">Dagens:</string>
     <string name="menu_button">Meny</string>
     <string name="daily_button">Dagens</string>
     <string name="title_activity_display_menu">Meny</string>
@@ -37,5 +38,15 @@
     <string name="cancel">Avbryt</string>
     <string name="total_price">Uppskattat totalt pris: </string>
     <string name="title_activity_display_daily">DisplayDaily</string>
+    <string name="next_week">Nästa vecka</string>
+    <string name="prev_week">Föregående vecka</string>
+    <string name="current_week">Nuvarande vecka</string>
+    <string name="prev">Föregående</string>
+    <string name="next">Nästa</string>
+    <string name="update_database">Uppdatera meny</string>
+    <string name="download_message_positive">Det finns en ny version av menyn, vill du ladda ner den?</string>
+    <string name="download">Ladda ner</string>
+    <string name="cancel">Avbryt</string>
+    
 
 </resources>

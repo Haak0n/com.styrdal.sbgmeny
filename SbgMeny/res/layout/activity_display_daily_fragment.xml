@@ -1,0 +1,202 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Displaydaily" >
+
+    <TextView android:id="@+id/display_daily_monday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/monday" />
+    
+    <TextView android:id="@+id/display_daily_monday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_monday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+ 
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_daily_divider1"
+        android:layout_below="@id/display_daily_monday_text"/>
+    
+    <TextView android:id="@+id/display_daily_tuesday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_divider1"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/tuesday" />
+    
+    <TextView android:id="@+id/display_daily_tuesday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_tuesday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_daily_divider2"
+        android:layout_below="@id/display_daily_tuesday_text"/>
+    
+    <TextView android:id="@+id/display_daily_wednesday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_divider2"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/wednesday" />
+    
+    <TextView android:id="@+id/display_daily_wednesday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_wednesday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_daily_divider3"
+        android:layout_below="@id/display_daily_wednesday_text"/>
+    
+    <TextView android:id="@+id/display_daily_thursday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_divider3"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/thursday" />
+    
+    <TextView android:id="@+id/display_daily_thursday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_thursday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+    
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_daily_divider4"
+        android:layout_below="@id/display_daily_thursday_text"/>
+    
+    <TextView android:id="@+id/display_daily_friday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_divider4"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/friday" />
+    
+    <TextView android:id="@+id/display_daily_friday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_friday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+    
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_daily_divider5"
+        android:layout_below="@id/display_daily_friday_text"/>
+    
+    <TextView android:id="@+id/display_daily_saturday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_divider5"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/saturday" />
+    
+    <TextView android:id="@+id/display_daily_saturday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_saturday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+    
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_daily_divider6"
+        android:layout_below="@id/display_daily_saturday_text"/>
+    
+    <TextView android:id="@+id/display_daily_sunday"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_divider6"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp"
+        android:gravity="center"
+        android:textSize="@dimen/head_title"
+        android:text="@string/sunday" />
+    
+    <TextView android:id="@+id/display_daily_sunday_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_daily_sunday"
+        android:paddingBottom="5sp"
+        android:paddingRight="5sp"
+        android:textSize="@dimen/text"
+        android:text="-" />
+    
+    <RelativeLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/display_daily_sunday_text" >
+    
+	    <Button android:id="@+id/display_daily_prev_button"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"	        
+	        android:gravity="center"
+	        android:textSize="@dimen/text"
+	        android:text="@string/prev"
+	        android:visibility="visible"
+	        android:onClick="prevWeek" />
+	    
+	    <Button android:id="@+id/display_restaurant_daily_next_button"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_toRightOf="@id/display_daily_prev_button"
+	        android:gravity="center"
+	        android:textSize="@dimen/text"
+	        android:text="@string/next"
+	        android:visibility="visible"
+	        android:onClick="nextWeek" />
+	</RelativeLayout>
+
+</RelativeLayout>

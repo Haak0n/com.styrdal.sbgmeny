@@ -34,6 +34,7 @@ public class Restaurant {
 	//Getting all the attributes for the Restaurant from the database from idname. Needs context for database connection.
 	public Restaurant(String idname, Context context, SQLiteDatabase db)
 	{
+		this.idname = idname;
 		String[] cursorProjection = { RestaurantsEntry.COLUMN_NAME_NAME,
 				RestaurantsEntry.COLUMN_NAME_ADDRESS, 
 				RestaurantsEntry.COLUMN_NAME_NUMBER, 
@@ -271,12 +272,12 @@ public class Restaurant {
 		return idname;
 	}
 	
-	public boolean getDaily()
+	public boolean hasDaily()
 	{
 		return daily;
 	}
 	
-	public boolean getStandard()
+	public boolean hasStandard()
 	{
 		return standard;
 	}
@@ -399,5 +400,11 @@ public class Restaurant {
 				return false;
 			}
 		}
+	}
+	
+	public DailyMenu getDailyMenu(SQLiteDatabase db)
+	{
+		Log.i(TAG, idname);
+		return new DailyMenu(idname, db);
 	}
 }

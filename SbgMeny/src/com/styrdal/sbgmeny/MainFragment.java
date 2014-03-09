@@ -15,6 +15,7 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -25,6 +26,16 @@ public class MainFragment extends ListFragment
 {
 	protected static final String TAG = "MainActivityFragment";
 	public final static String EXTRA_MESSAGE = "com.styrdal.SbgMeny.MESSAGE";
+	
+	private SQLiteDatabase db;
+	
+	//Enabling options menu and context menu
+	@Override
+	public void onActivityCreated(Bundle savedState)
+	{
+		super.onActivityCreated(savedState);
+		setHasOptionsMenu(true);
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -40,7 +51,7 @@ public class MainFragment extends ListFragment
 			
 			String dbName = "restauranger.db";
 			mDbHelper = new RestaurantsDBHelper(context, dbName, dbName);
-			SQLiteDatabase db = mDbHelper.getWritableDatabase();
+			db = mDbHelper.getWritableDatabase();
 			
 			String[] cursorProjection = cursorProjection();
 			String sortOrder = RestaurantsEntry.COLUMN_NAME_NAME + " ASC";
@@ -131,5 +142,24 @@ public class MainFragment extends ListFragment
 			System.exit(0);
 			return null;
 		}
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Log.i(TAG, "pressed a button!");
+	    switch (item.getItemId()) {
+	    case R.id.update_database:
+	    	UpdateDatabase updateDatabase = new UpdateDatabase(db);
+	    	if(updateDatabase.checkUpdate(getFragmentManager(), getActivity()))
+	    	{
+	    		Log.i(TAG, "There is a newer database!");
+	    	}
+	    	else
+	    	{
+	    		Log.i(TAG, "No new database available.");
+	    	}
+	    	return true;
+	    }
+	    return super.onOptionsItemSelected(item);
 	}
 }

@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -20,7 +21,11 @@ public class RestaurantsDBHelper extends SQLiteOpenHelper {
   private final String assetPath;
   private final String dbPath;
   
-  private final String VERSION = "12";
+  public static final String DB_VERSION_NAME = "com.styrdal.dbVersionName";
+  public static final String DB_VERSION_CURRENT = "com.styrdal.dbVersionCurrent";
+  public static final String DB_VERSION_NEWEST = "com.styrdal.dbVersionNewest";
+  
+  private final int VERSION = 15;
 
   public RestaurantsDBHelper(Context context, String dbName, String assetPath) throws IOException {
     super(context, dbName, null, 1);
@@ -73,7 +78,10 @@ public class RestaurantsDBHelper extends SQLiteOpenHelper {
   //Comparing VERSION to version number of the database, copying database if not matching
   private void checkUpdated() throws IOException
   {
-	  
+	  SharedPreferences settings = context.getSharedPreferences(RestaurantsDBHelper.DB_VERSION_NAME, 0);
+	  int currentVersion = settings.getInt(DB_VERSION_CURRENT, 0);
+	  if(currentVersion < VERSION)
+	  {
 	  File dbFile = new File(dbPath);
 	  
 	  SQLiteDatabase db = this.getWritableDatabase();
@@ -85,21 +93,23 @@ public class RestaurantsDBHelper extends SQLiteOpenHelper {
 	  
 	  c.moveToFirst();
 	  
-	  String dbVersion = c.getString(c.getColumnIndex("version"));
+	  int dbVersion = c.getInt(c.getColumnIndex("version"));
 	  Log.i(TAG, "Checking if " + dbPath + " is updated.");
 	  
-	  if(!dbVersion.equals(VERSION))
+	  Log.i(TAG, "Current version: " + Integer.toString(dbVersion));
+	  Log.i(TAG, "Newest version: " + Integer.toString(VERSION));
+	  
+	  if(dbVersion < VERSION)
 	  {
-		  Log.i(TAG, "Current version: " + dbVersion);
-		  Log.i(TAG, "Newest version: " + VERSION);
-		  Log.i(TAG, "updating database...");
-	
-		  dbFile.getParentFile().mkdirs();
-		  copyStream(context.getAssets().open(assetPath), new FileOutputStream(dbFile));
-	
-		  Log.i(TAG, assetPath + " has been copied to " + dbFile.getAbsolutePath());
+			  Log.i(TAG, "updating database...");
+		
+			  dbFile.getParentFile().mkdirs();
+			  copyStream(context.getAssets().open(assetPath), new FileOutputStream(dbFile));
+		
+			  Log.i(TAG, assetPath + " has been copied to " + dbFile.getAbsolutePath());
+		  }
+		  db.close();
 	  }
-	  db.close();
   }
 
   @Override

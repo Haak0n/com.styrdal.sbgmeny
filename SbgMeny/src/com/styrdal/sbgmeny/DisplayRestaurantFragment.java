@@ -87,20 +87,40 @@ public class DisplayRestaurantFragment extends Fragment {
 		number2.setText(restaurant.getNumber());
 		number2.setOnClickListener(callNumber);
 		
-		TextView url2 = (TextView) fragmentView.findViewById(R.id.display_restaurant_url2);
-		url2.setText(restaurant.getUrl());
-		if(!restaurant.getUrl().equals(null))
+		if(!restaurant.getUrl().equals(""))
 		{
+			Log.i(TAG, restaurant.getUrl());
+			TextView url1 = (TextView) fragmentView.findViewById(R.id.display_restaurant_url1);
+			url1.setVisibility(View.VISIBLE);
+			
+			TextView url2 = (TextView) fragmentView.findViewById(R.id.display_restaurant_url2);
+			url2.setText(restaurant.getUrl());
+			url2.setVisibility(View.VISIBLE);
 			url2.setOnClickListener(showUrl);
 		}
 		
-		if(restaurant.getDaily())
+		if(restaurant.hasDaily())
+		{
+			DailyMenu dailyMenu = restaurant.getDailyMenu(db);
+			
+			TextView daily1 = (TextView) fragmentView.findViewById(R.id.display_restaurant_daily1);
+			daily1.setVisibility(View.VISIBLE);
+			
+			TextView daily2 = (TextView) fragmentView.findViewById(R.id.display_restaurant_daily2);
+			daily2.setVisibility(View.VISIBLE);
+			daily2.setText(dailyMenu.today());
+			
+			View divider5 = (View) fragmentView.findViewById(R.id.display_restaurant_divider5);
+			divider5.setVisibility(View.VISIBLE);
+		}
+		
+		if(restaurant.hasDaily())
 		{
 			Button dailyButton = (Button) fragmentView.findViewById(R.id.display_restaurant_daily_button);
 			dailyButton.setVisibility(Button.VISIBLE);
 		}
 		
-		if(restaurant.getStandard())
+		if(restaurant.hasStandard())
 		{
 			Button standardButton = (Button) fragmentView.findViewById(R.id.display_restaurant_menu_button);
 			standardButton.setVisibility(Button.VISIBLE);

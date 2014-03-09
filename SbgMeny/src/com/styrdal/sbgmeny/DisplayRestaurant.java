@@ -32,6 +32,14 @@ public class DisplayRestaurant extends ActionBarActivity
 		startActivity(intent);
 	}
 	
+	//Daily button listener
+	public void showDaily(View view)
+	{
+		Intent intent = new Intent(this, DisplayDaily.class);
+		startActivity(intent);
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
 	{
 		MenuInflater inflater = getMenuInflater();

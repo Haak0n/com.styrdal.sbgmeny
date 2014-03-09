@@ -93,6 +93,7 @@
         android:paddingLeft="2sp"
         android:paddingTop="@dimen/divider_padding"
         android:paddingBottom="@dimen/divider_padding"
+        android:visibility="gone"
         android:textSize="@dimen/text"
         android:text="@string/url" />
         
@@ -103,16 +104,45 @@
         android:layout_toRightOf="@id/display_restaurant_url1"
         android:paddingTop="@dimen/divider_padding"
         android:paddingBottom="@dimen/divider_padding"
+        android:visibility="gone"
         android:textSize="@dimen/text"/>
     
     <View style="@style/Divider"
         android:id="@+id/display_restaurant_divider4"
         android:layout_below="@id/display_restaurant_url2" />
     
+	<TextView android:id="@+id/display_restaurant_daily1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_divider4"
+        android:gravity="left"
+        android:paddingRight="2sp"
+        android:paddingLeft="2sp"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:visibility="gone"
+        android:textSize="@dimen/text"
+        android:text="@string/daily_text" />
+        
+    <TextView android:id="@+id/display_restaurant_daily2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/display_restaurant_divider4"
+        android:layout_toRightOf="@id/display_restaurant_daily1"
+        android:paddingTop="@dimen/divider_padding"
+        android:paddingBottom="@dimen/divider_padding"
+        android:visibility="gone"
+        android:textSize="@dimen/text"/>
+    
+    <View style="@style/Divider"
+        android:id="@+id/display_restaurant_divider5"
+        android:layout_below="@id/display_restaurant_daily2"
+        android:visibility="gone" />
+    
     <TextView android:id="@+id/display_restaurant_extra"
 		android:layout_height="wrap_content"
 		android:layout_width="300sp"
-		android:layout_below="@id/display_restaurant_divider4"
+		android:layout_below="@id/display_restaurant_divider5"
 		android:gravity="left"
 		android:paddingLeft="2sp"
         android:paddingTop="@dimen/divider_padding"
@@ -127,19 +157,18 @@
         android:gravity="center"
         android:textSize="@dimen/text"
         android:text="@string/menu_button"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:onClick="showMenu" />
     
     <Button android:id="@+id/display_restaurant_daily_button"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_below="@id/display_restaurant_extra"
-        android:layout_toLeftOf="@id/display_restaurant_menu_button"
+        android:layout_below="@id/display_restaurant_menu_button"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:textSize="@dimen/text"
         android:text="@string/daily_button"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:onClick="showDaily" />
 	
 </RelativeLayout>
