@@ -150,14 +150,7 @@ public class MainFragment extends ListFragment
 	    switch (item.getItemId()) {
 	    case R.id.update_database:
 	    	UpdateDatabase updateDatabase = new UpdateDatabase(db);
-	    	if(updateDatabase.checkUpdate(getFragmentManager(), getActivity()))
-	    	{
-	    		Log.i(TAG, "There is a newer database!");
-	    	}
-	    	else
-	    	{
-	    		Log.i(TAG, "No new database available.");
-	    	}
+	    	updateDatabase.checkUpdate(getFragmentManager(), getActivity());
 	    	return true;
 	    }
 	    return super.onOptionsItemSelected(item);

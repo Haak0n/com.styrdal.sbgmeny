@@ -25,6 +25,7 @@ import org.apache.http.util.EntityUtils;
 import com.styrdal.sbgmeny.VersionContract.VersionEntry;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -32,6 +33,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
+import android.widget.Toast;
 
 public class UpdateDatabase 
 {
@@ -100,6 +102,7 @@ public class UpdateDatabase
 		}
 		else
 		{
+			Toast.makeText(context, "Din meny behöver inte uppdateras!", Toast.LENGTH_SHORT).show();
 			return false;
 		}
 	}
@@ -122,7 +125,7 @@ public class UpdateDatabase
 		return string;
 	}
 	
-
+	//Check styrdal.com for newest database version.
 	private class CheckNewest extends AsyncTask<Void, Void, Integer>
 	{	
 		@Override
@@ -182,15 +185,15 @@ public class UpdateDatabase
 		}
 	}
 	
-	private class DownloadDatabase extends AsyncTask<Context, Void, Void>
+	private class DownloadDatabase extends AsyncTask<Context, Void, Context>
 	{
-
 		@Override
-		protected Void doInBackground(Context... context) 
+		protected Context doInBackground(Context... context) 
 		{
 			Context thisContext = context[0];
-			try {
-				
+			try 
+			{
+				//Downloading database
 				URL url = new URL("http://www.styrdal.com/database/restauranger.db");
 				URLConnection uCon = url.openConnection();
 				
@@ -204,28 +207,31 @@ public class UpdateDatabase
 					baf.append((byte) current);
 				}
 				FileOutputStream outputStream = null;
-				outputStream = thisContext.openFileOutput("/restauranger.db", Context.MODE_PRIVATE);
+				outputStream = thisContext.openFileOutput("restauranger.db", Context.MODE_PRIVATE);
 				
 				outputStream.write(baf.toByteArray());
 				Log.i(TAG, "Downloaded file to: " + thisContext.getFilesDir() + "restauranger.db");
 				outputStream.close();
 				
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
+			} 
+			catch (MalformedURLException e) 
+			{
 				e.printStackTrace();
 			}
-			catch (IOException e) {
-				// TODO Auto-generated catch block
+			catch (IOException e) 
+			{
 				e.printStackTrace();
 			}
 			
 			Log.i(TAG, "Database downloaded.");
 			Log.i(TAG, "Copying database...");
+			//Copy Database to /database/
 			copyDatabase(thisContext);
 			Log.i(TAG, "Database copied...");
-			return null;
+			return thisContext;
 		}
 		
+		//Copying downloaded database
 		private void copyDatabase(Context context)
 		{
 			try 
@@ -237,7 +243,7 @@ public class UpdateDatabase
 				InputStream is;
 				
 				is = context.openFileInput(dbName);
-				Log.i(TAG, "Copying database from: " + context.getFilesDir().toString() + "/" + dbName +  " to: " + dbPath);
+				Log.i(TAG, "Copying database from: " + context.getFilesDir().toString() + dbName +  " to: " + dbPath);
 				
 				FileOutputStream os = new FileOutputStream(dbFile);
 				
@@ -250,7 +256,7 @@ public class UpdateDatabase
 			      os.write(buf, 0, c);
 			    }
 			    is.close();
-			    os.close();
+			    os.close();	    
 			} 
 			catch (IOException e) 
 			{
@@ -259,5 +265,12 @@ public class UpdateDatabase
 			}
 		}
 		
+		@Override
+		
+		protected void onPostExecute(Context context)
+		{
+			Toast.makeText(context, "Meny nerladdad!", Toast.LENGTH_SHORT).show();
+			context.startActivity(new Intent(context, MainActivity.class));
+		}
 	}
 }
