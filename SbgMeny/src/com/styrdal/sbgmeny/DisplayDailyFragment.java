@@ -60,6 +60,7 @@ public class DisplayDailyFragment extends Fragment
 		{
 			TextView mondayText = (TextView) fragmentView.findViewById(R.id.display_daily_monday_text);
 			mondayText.setText(dailyMenu.getMonday());
+			Log.i(TAG, dailyMenu.getMonday());
 		}
 		
 		if(dailyMenu.getTuesday() != null)

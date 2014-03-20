@@ -79,25 +79,25 @@ public class DailyMenu
 	{
 		if(c.moveToFirst())
 		{
-		this.monday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+		this.monday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 		if(c.moveToNext())
 			{
-				this.tuesday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+				this.tuesday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 				if(c.moveToNext())
 				{
-					this.wednesday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+					this.wednesday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 					if(c.moveToNext())
 					{
-						this.thursday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+						this.thursday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 						if(c.moveToNext())
 						{
-							this.friday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+							this.friday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 							if(c.moveToNext())
 							{
-								this.saturday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+								this.saturday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 								if(c.moveToNext())
 								{
-									this.sunday = c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_DAY));
+									this.sunday = unescape(c.getString(c.getColumnIndex(DailyEntry.COLUMN_NAME_TEXT)));
 								}
 							}
 						}
@@ -218,5 +218,9 @@ public class DailyMenu
 	public void setSunday(String sunday)
 	{
 		this.sunday = sunday;
+	}
+	
+	private String unescape(String description) {
+	    return description.replaceAll("\\\\n", "\\\n");
 	}
 }

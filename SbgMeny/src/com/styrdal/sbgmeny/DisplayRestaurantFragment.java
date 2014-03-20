@@ -133,20 +133,6 @@ public class DisplayRestaurantFragment extends Fragment {
 		return fragmentView;
 	}
 	
-	//Menu button listener
-	public void showMenu(View view)
-	{
-		Intent intent = new Intent(getActivity(), DisplayMenu.class);
-		startActivity(intent);
-	}
-	
-	//Daily button listener
-	public void showDaily(View view)
-	{
-		Intent intent = new Intent(getActivity(), DisplayDaily.class);
-		startActivity(intent);
-	}
-	
 	private View.OnClickListener showTimes = new View.OnClickListener() {
         public void onClick(View view) {
     		Intent intent = new Intent(view.getContext(), DisplayTimes.class);

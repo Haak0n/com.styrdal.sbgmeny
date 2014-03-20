@@ -29,7 +29,7 @@ public class MainFragment extends ListFragment
 	
 	private SQLiteDatabase db;
 	
-	//Enabling options menu and context menu
+	//Enabling options menu
 	@Override
 	public void onActivityCreated(Bundle savedState)
 	{
@@ -56,16 +56,9 @@ public class MainFragment extends ListFragment
 			String[] cursorProjection = cursorProjection();
 			String sortOrder = RestaurantsEntry.COLUMN_NAME_NAME + " ASC";
 			
-			Cursor c = db.query(RestaurantsEntry.TABLE_NAME, cursorProjection, null, null, null, null, sortOrder);
-			
-			
-			
-			String[] selection =  {RestaurantsEntry.COLUMN_NAME_NAME, cursorProjection[3], cursorProjection[4]};
-			int[] displays =  {R.id.main_name, R.id.main_open, R.id.main_list_close};
+			Cursor c = db.query(RestaurantsEntry.TABLE_NAME, cursorProjection, null, null, null, null, sortOrder);		
 			
 			MainListAdapter adapter = new MainListAdapter(context, c, cursorProjection[3], cursorProjection[4]);
-			
-			TextView separator = (TextView) fragmentView.findViewById(R.id.main_list_separator);
 			
 			setListAdapter(adapter);
 		}
@@ -94,6 +87,7 @@ public class MainFragment extends ListFragment
     	startActivity(intent);
 	    
 	}
+	
 	//Getting the correct day column for today
 	private String[] cursorProjection()
 	{
